@@ -1,13 +1,15 @@
 #include <iostream>
 #include "TodoList.h"
 
+
 int main() {
+
+
     TodoList list;
     Task testTask;
 
-    testTask.name = "TEST NAME";
-    testTask.description = "TEST DESCRIPTION";
-    testTask.dueTo = 0;
+    testTask.setName("TEST NAME");
+    testTask.setDescription("TEST DESCRIPTION");
 
     list.addTask(testTask);
     list.completeTask(testTask);
