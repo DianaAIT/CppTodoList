@@ -11,7 +11,7 @@ bool TodoList::addTask(Task task) {
     bool shouldAddTask = true;
 
     for (auto storedTask:tasks) {
-        if (storedTask.name == task.name) {
+        if (storedTask.getName() == task.getName()) {
             shouldAddTask = false;
         }
     }
@@ -25,7 +25,7 @@ bool TodoList::addTask(Task task) {
 void TodoList::completeTask(Task task) {
     for (int i = 0; i < tasks.size(); i++) {
         if (tasks[i].getName() == task.getName()) {
-            tasks[i].getStatus() = RESOLVED;
+            tasks[i].setStatus(RESOLVED);
         }
     }
 }
@@ -44,7 +44,7 @@ vector<Task> TodoList::activeTasks() {
 vector<Task> TodoList::resolvedTasks() {
     vector<Task> activeTasks;
     for (int i = 0; i < tasks.size(); i++) {
-        if (tasks[i].status == RESOLVED) {
+        if (tasks[i].getStatus() == RESOLVED) {
             activeTasks.push_back(tasks[i]);
         }
     }

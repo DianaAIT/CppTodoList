@@ -10,13 +10,13 @@ string Task::display() {
 
     return "name: " + name +
            "\ndescription: " + description +
-           "\ndueTo: " + to_string(dueTo) +
-           "\nTaskStatus: "  + (status == 0 ? "ACTIVE" : "RESOLVED")
-           + "\nCreationTime: " +
-           asctime(localtime(&creationTime));
+           "\ndueTo: " + asctime(localtime(&dueTo)) +
+           "\nTaskStatus: "  + (status == 0 ? "ACTIVE" : "RESOLVED") +
+           "\nCreationTime: " + asctime(localtime(&creationTime));
 }
 Task::Task() {
     time (&creationTime);
+    time (&dueTo);
 }
 
 void Task::setName(string name) {
@@ -38,6 +38,15 @@ string Task::getDescription() {
 
 Task::Task(string name, string description) {
     time (&creationTime);
+    time (&dueTo);
     this->name = name;
     this->description = description;
+}
+
+void Task::setStatus(TaskStatus status) {
+    this->status = status;
+}
+
+TaskStatus Task::getStatus() {
+    return status;
 }

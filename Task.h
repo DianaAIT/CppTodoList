@@ -17,10 +17,10 @@ public:
     void setName(string name);
     string getName();
     void setDescription(string desc);
-    string setDescripton;
     string getDescription();
-    string getDescripton;
-    TaskStatus getStatus;
+    TaskStatus getStatus();
+    void setStatus(TaskStatus status);
+
     string display();
 
     Task();
@@ -29,7 +29,7 @@ private:
 
     string name;
     string description;
-    int dueTo;
+    time_t dueTo;
     time_t creationTime;
     TaskStatus status = ACTIVE;
 };
