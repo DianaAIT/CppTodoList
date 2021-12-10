@@ -4,7 +4,6 @@
 
 int main() {
 
-
     TodoList list;
     Task testTask;
 
@@ -13,15 +12,16 @@ int main() {
 
     list.addTask(testTask);
     list.completeTask(testTask);
-//    if(!list.addTask(testTask))
-//    {
-//        cout << "WAS UNABLE TO ADD NEW TASK: " + testTask.display();
-//    }
+/*    if(!list.addTask(testTask))
+    {
+        cout << "WAS UNABLE TO ADD NEW TASK: " + testTask.display();
+    }*/
 
     auto resultList = list.resolvedTasks();
 
-    for (auto resultTask: resultList) {
-        cout << resultTask.display();
+    for (Task resultTask: resultList) {
+        cout << resultTask;
     }
+    list[3];
     return 0;
 }

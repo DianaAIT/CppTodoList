@@ -33,5 +33,6 @@ private:
     time_t creationTime;
     TaskStatus status = ACTIVE;
 };
+std::ostream& operator << (std::ostream& stream, Task task);
 
 #endif //UNTITLED_TASK_H

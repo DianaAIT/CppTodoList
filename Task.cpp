@@ -50,3 +50,9 @@ void Task::setStatus(TaskStatus status) {
 TaskStatus Task::getStatus() {
     return status;
 }
+
+std::ostream &operator<<(ostream &stream, Task task) {
+    stream << task.display();
+    return  stream;
+}
+

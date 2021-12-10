@@ -20,6 +20,7 @@ public:
 
     vector<Task> resolvedTasks();
 
+    Task operator [] (int s);
 };
 
 #endif //UNTITLED_TODOLIST_H
